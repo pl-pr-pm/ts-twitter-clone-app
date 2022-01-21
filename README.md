@@ -1,2 +1,3 @@
 # ts-twitter-clone-app
-Typescript/Firebase/Redux-toolkitを用いたTwitterクローンアプリ
+
+Typescript/Firebase/Redux-toolkit を用いた Twitter クローンアプリ

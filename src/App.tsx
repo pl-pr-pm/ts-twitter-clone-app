@@ -15,6 +15,7 @@ const App: React.FC = () => {
     // unSub -> func
     const unSub = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
+        console.log("auth Changed authUser True");
         dispatch(
           login({
             uid: authUser.uid,
@@ -23,7 +24,8 @@ const App: React.FC = () => {
           })
         );
       } else {
-        dispatch(logout);
+        console.log("auth Changed authUser Flase");
+        dispatch(logout());
       }
     });
     // アンマウント後サブスクが不要なのでアンサブ

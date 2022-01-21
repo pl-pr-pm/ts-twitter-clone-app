@@ -11,10 +11,12 @@ export const userSlice = createSlice({
   reducers: {
     //action
     login: (state, action) => {
+      console.log("login invoked!")
       state.user = action.payload;
     },
     //action
     logout: (state) => {
+      console.log("logout invoked!")
       state.user = {uid:"", photoUrl:"", displayName:""};
     },
   },

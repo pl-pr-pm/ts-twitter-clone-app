@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Post: React.FC<PROPS> = (props) => {
+  console.log("post top");
   const classes = useStyles();
   const user = useSelector(selectUser);
   const [comment, setComment] = useState("");
@@ -50,6 +51,9 @@ const Post: React.FC<PROPS> = (props) => {
   const [openComments, setOpenComments] = useState(false);
 
   useEffect(() => {
+    {
+      console.log("post render");
+    }
     const unSub = db
       .collection("posts")
       .doc(props.postId)

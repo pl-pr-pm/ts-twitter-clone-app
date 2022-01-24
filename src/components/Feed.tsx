@@ -32,6 +32,10 @@ const Feed: React.FC = () => {
   return (
     <div className={styles.feed}>
       <TweetInput />
+      {/* Post コンポーネントに posts そのものを渡さないわけ → 新規で追加された post もレンダリングしやすくするため。
+       post は、snapshot で取得しているので、サブスクしている間、postのデータがfirestoreに追加されると、stateのpostにも追加される
+       一度にpostsを送ってしまうと、新規追加分のデータの表示の実装がコストかかるため、このような実装にしていると思われる
+       ただ、この方法だと、post が追加されるたびに、postコンポーネントの処理が全て実行されてしまうので、パフォーマンスは悪い*/}
       {posts[0]?.id && (
         <>
           {posts.map((post) => (
